@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var button: UIButton!
     
+    
+    
     //загаданное число
     var number: Int = Int.random(in: 1...50)
     //раунд
@@ -102,6 +104,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         label.text = String(number)
+        label.textColor = .black
         print("Загаданное число - \(number)")
     }
 
