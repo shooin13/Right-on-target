@@ -30,8 +30,13 @@ class ViewController: UIViewController {
             let alert = UIAlertController(title: "Игра окончена", message: "Вы угадали", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Играть еще раз", style: .default))
             present(alert, animated: true)
+            number = Int.random(in: 1...50)
+            label.text = String(number)
         } else {
             print("промах на \(sliderNumber - number)")
+            let alert = UIAlertController(title: "Вы не угадали", message: "Число отличается на \(sliderNumber - number)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Продолжить", style: .default))
+            present(alert, animated: true)
         }
 
     }
