@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     
     //загаданное число
-    var number: Int = Int.random(in: 1...50)
+    var number: Int = 0
     //раунд
     var round: Int = 0
     //сумма очков за раунд
@@ -94,19 +94,63 @@ class ViewController: UIViewController {
         }
 
     }
+    //ленивое свойство для хранения ViewController
+    lazy var secondViewController: SecondViewController = getSecondViewController()
+    //приватный метод, загружающий View Controller
+    private func getSecondViewController() -> SecondViewController {
+        //загрузка Storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //загрузка View Controller и его сцены со Storyboard
+        let viewController = storyboard.instantiateViewController(identifier: "SecondViewController")
+        return viewController as! SecondViewController
+    }
+    @IBAction func showSecondScreen(){
+        present(secondViewController, animated: true, completion: nil)
+    }
     
     
-    
-    
+    override func loadView() {
+        super.loadView()
+        //создаем метку для вывода номера версии
+        let versionLabel = UILabel(frame: CGRect(x: 20, y: 10, width: 200, height: 20))
+        //меняем текст метки
+        versionLabel.text = "Версия 1.1"
+        versionLabel.font = UIFont.systemFont(ofSize: 10, weight: .bold)
+        //добавляем метку в родительский view
+        self.view.addSubview(versionLabel)
+        print("loadView")
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        number = Int.random(in: 1...50)
         label.text = String(number)
         label.textColor = .black
         print("Загаданное число - \(number)")
+        print("viewDidLoad")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewWillAppear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidAppear")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("viewWillDisappear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("viewDidDisappear")
+    }
+    
 
 
 }

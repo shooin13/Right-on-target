@@ -39,6 +39,14 @@
                                 <color key="minimumTrackTintColor" systemColor="systemPinkColor"/>
                                 <color key="thumbTintColor" systemColor="systemPinkColor"/>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cps-GG-bga">
+                                <rect key="frame" x="700" y="358" width="132" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="О программе"/>
+                                <connections>
+                                    <action selector="showSecondScreen" destination="BYZ-38-t0r" eventType="touchUpInside" id="erl-9k-YYP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -46,12 +54,15 @@
                             <constraint firstItem="Tqu-mr-ETd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Ej-Z2-0zd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FgW-8p-ycK" secondAttribute="trailing" constant="20" id="GQ0-0n-pnG"/>
                             <constraint firstItem="uL0-Nb-jY1" firstAttribute="top" secondItem="Tqu-mr-ETd" secondAttribute="bottom" constant="30" id="UYo-O2-Kfd"/>
+                            <constraint firstAttribute="bottom" secondItem="Cps-GG-bga" secondAttribute="bottom" id="Wgj-c2-7c6"/>
                             <constraint firstItem="FgW-8p-ycK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Z00-6V-xP8"/>
                             <constraint firstItem="uL0-Nb-jY1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iAR-8f-z1T"/>
                             <constraint firstItem="Tqu-mr-ETd" firstAttribute="top" secondItem="FgW-8p-ycK" secondAttribute="bottom" constant="30" id="m3d-35-fnH"/>
+                            <constraint firstAttribute="trailing" secondItem="Cps-GG-bga" secondAttribute="trailing" constant="20" id="mGk-jO-B9l"/>
                             <constraint firstItem="FgW-8p-ycK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zDI-tI-b3n"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="LD7-9g-6cp"/>
                     <connections>
                         <outlet property="button" destination="Tqu-mr-ETd" id="hjA-6D-pS0"/>
                         <outlet property="label" destination="uL0-Nb-jY1" id="8ia-Nr-at4"/>
@@ -62,10 +73,43 @@
             </objects>
             <point key="canvasLocation" x="140" y="-2"/>
         </scene>
+        <!--Second View Controller-->
+        <scene sceneID="scG-PS-8eJ">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="lVL-t8-OPl" customClass="SecondViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="15C-yp-psu">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2s-WZ-cRD">
+                                <rect key="frame" x="389.33333333333331" y="179" width="73.333333333333314" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Назад"/>
+                                <connections>
+                                    <action selector="hideCurrentScene" destination="lVL-t8-OPl" eventType="touchUpInside" id="aJm-9p-RNW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gw9-7b-muR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b2s-WZ-cRD" firstAttribute="centerX" secondItem="15C-yp-psu" secondAttribute="centerX" id="gdH-iu-5OA"/>
+                            <constraint firstItem="b2s-WZ-cRD" firstAttribute="centerY" secondItem="15C-yp-psu" secondAttribute="centerY" id="yVH-tF-TbB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xT2-pw-SZ6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZV-RP-jBg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="805" y="-28"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1.square.fill" catalog="system" width="128" height="114"/>
         <image name="50.square.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
