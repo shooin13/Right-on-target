@@ -94,19 +94,8 @@ class ViewController: UIViewController {
         }
 
     }
-    //ленивое свойство для хранения ViewController
-    lazy var secondViewController: SecondViewController = getSecondViewController()
-    //приватный метод, загружающий View Controller
-    private func getSecondViewController() -> SecondViewController {
-        //загрузка Storyboard
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //загрузка View Controller и его сцены со Storyboard
-        let viewController = storyboard.instantiateViewController(identifier: "SecondViewController")
-        return viewController as! SecondViewController
-    }
-    @IBAction func showSecondScreen(){
-        present(secondViewController, animated: true, completion: nil)
-    }
+
+
     
     
     override func loadView() {
