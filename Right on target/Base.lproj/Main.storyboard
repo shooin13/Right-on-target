@@ -25,6 +25,7 @@
                                     <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="checkNumber" destination="BYZ-38-t0r" eventType="touchUpInside" id="3eM-nG-mb0"/>
                                     <action selector="checkNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vZx-t1-HYn"/>
                                 </connections>
                             </button>
