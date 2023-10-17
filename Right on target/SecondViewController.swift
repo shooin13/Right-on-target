@@ -37,7 +37,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        print("Second viewDid Disappear")
+        print("Second viewDidDisappear")
     }
     
     

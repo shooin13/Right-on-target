@@ -35,15 +35,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //создаем экземпляр сущности «Игра»
-        var game = Game(startValue: 1, endValue: 50, rounds: 5)
+        game = Game(startValue: 1, endValue: 50, rounds: 5)
         
         //обновляем данные о екущем значении загаданного числа
-        //updateLabelWithSecretNumber(newText: String(game?.currentSecretValue))
-        updateLabelWithSecretNumber(newText: String(game!.currentSecretValue))
-        
-        print("Загаданное число - \(String(game!.currentSecretValue))")
+        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
         print("viewDidLoad")
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -68,6 +66,8 @@ class ViewController: UIViewController {
     //MARK: - Взаимодействие View - Model
     
     //проверка выбранного пользователем числа
+    
+    
     @IBAction func checkNumber() {
         //высчитываем очки за раунд
         game.calculateScore(with: Int(slider.value))
@@ -88,6 +88,7 @@ class ViewController: UIViewController {
     //MARK: - Обновление View
     //обновление текста загаданного числа
     private func updateLabelWithSecretNumber(newText: String) {
+        print("Загаданное число - \(String(game.currentSecretValue))")
         label.text = newText
     }
     
@@ -97,7 +98,6 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Начать заново", style: .default))
         self.present(alert, animated: true)
     }
-    
 
 }
 

@@ -25,8 +25,7 @@
                                     <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="checkNumber" destination="BYZ-38-t0r" eventType="touchUpInside" id="3eM-nG-mb0"/>
-                                    <action selector="checkNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vZx-t1-HYn"/>
+                                    <action selector="checkNumber" destination="BYZ-38-t0r" eventType="touchUpInside" id="JrS-L2-oKW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uL0-Nb-jY1">
@@ -65,7 +64,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Right on Target" id="LD7-9g-6cp"/>
                     <connections>
-                        <outlet property="button" destination="Tqu-mr-ETd" id="hjA-6D-pS0"/>
                         <outlet property="label" destination="uL0-Nb-jY1" id="8ia-Nr-at4"/>
                         <outlet property="slider" destination="FgW-8p-ycK" id="lw2-Gt-1v0"/>
                     </connections>

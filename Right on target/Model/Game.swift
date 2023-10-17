@@ -1,3 +1,5 @@
+import UIKit
+
 protocol GameProtocol {
     //количество заработанных очков
     var score: Int {get}
